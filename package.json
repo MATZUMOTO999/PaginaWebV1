@@ -1,0 +1,22 @@
+{
+  "name": "pagina-web-v1",
+  "version": "1.0.0",
+  "description": "Sitio web del Instituto Educativo Superior Público Huanta",
+  "main": "index.html",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./src/output.css --minify",
+    "start": "npm run build"
+  },
+  "keywords": [
+    "educación",
+    "instituto",
+    "huanta"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.3.0",
+    "@tailwindcss/cli": "^3.3.0"
+  }
+}

@@ -1,15 +1,68 @@
-<footer>
+<footer class="site-footer bg-gradient-to-b from-gray-900 to-black text-white py-12 md:py-16 mt-20">
+  <section class="newsletter bg-gradient-to-r from-primary-600 to-accent-500 mb-12" aria-labelledby="newsletter-title">
+    <div class="container-custom px-6 py-10 md:px-8">
+      <div class="grid items-center gap-6 md:grid-cols-2">
+        <div>
+          <h2 id="newsletter-title" class="text-2xl font-bold md:text-3xl">Mantente informado</h2>
+          <p class="mt-2 text-gray-100">Recibe noticias y actualizaciones del instituto.</p>
+        </div>
+        <form class="flex flex-col gap-2 sm:flex-row" action="#" method="post">
+          <label for="footer-email" class="sr-only">Correo electrónico</label>
+          <input id="footer-email" name="email" type="email" autocomplete="email" placeholder="Tu correo electrónico" class="min-w-0 flex-1 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white" required>
+          <button type="submit" class="btn-primary bg-white text-primary-600 hover:bg-gray-100">Suscribir</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
-    <h3>Instituto de Educación Superior Público Huanta</h3>
+  <div class="container-custom px-6 md:px-8">
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-4">
+      <section aria-labelledby="footer-about-title">
+        <div class="mb-4 flex items-center gap-2">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-600" aria-hidden="true"><span class="font-bold">I</span></div>
+          <h2 id="footer-about-title" class="text-lg font-bold">IESPH</h2>
+        </div>
+        <p class="text-sm text-gray-400">Instituto de Educación Superior Público Huanta. Formando profesionales de excelencia desde 2001.</p>
+        <address class="mt-5 space-y-2 text-sm not-italic text-gray-400">
+          <p>Jr. Córdoba N° 650, Huanta</p>
+          <p><a class="hover:text-primary-400" href="tel:+51666322296">(066) 322296</a></p>
+          <p><a class="hover:text-primary-400" href="mailto:info@iesph.edu.pe">info@iesph.edu.pe</a></p>
+        </address>
+      </section>
 
-    <p>Jr. Córdoba N° 650</p>
+      <section aria-labelledby="footer-links-title">
+        <h2 id="footer-links-title" class="mb-4 text-lg font-bold">Enlaces rápidos</h2>
+        <nav class="space-y-2 text-sm" aria-label="Enlaces rápidos">
+          <a href="./index.html" class="block text-gray-400 transition-colors hover:text-primary-400">Inicio</a>
+          <a href="./pages/nosotros.html" class="block text-gray-400 transition-colors hover:text-primary-400">Nosotros</a>
+          <a href="./pages/carreras.html" class="block text-gray-400 transition-colors hover:text-primary-400">Carreras</a>
+          <a href="./pages/admision.html" class="block text-gray-400 transition-colors hover:text-primary-400">Admisión</a>
+          <a href="./pages/noticias.html" class="block text-gray-400 transition-colors hover:text-primary-400">Noticias</a>
+          <a href="./pages/contacto.html" class="block text-gray-400 transition-colors hover:text-primary-400">Contacto</a>
+        </nav>
+      </section>
 
-    <p>Teléfono: (066) 322296</p>
+      <section aria-labelledby="footer-services-title">
+        <h2 id="footer-services-title" class="mb-4 text-lg font-bold">Servicios</h2>
+        <nav class="space-y-2 text-sm" aria-label="Servicios">
+          <a href="./pages/tramites.html" class="block text-gray-400 transition-colors hover:text-primary-400">Trámites</a>
+          <a href="./pages/matricula.html" class="block text-gray-400 transition-colors hover:text-primary-400">Matrícula</a>
+          <a href="./pages/galeria.html" class="block text-gray-400 transition-colors hover:text-primary-400">Galería</a>
+          <a href="./pages/eventos.html" class="block text-gray-400 transition-colors hover:text-primary-400">Eventos</a>
+        </nav>
+      </section>
 
-    
+      <section aria-labelledby="footer-social-title">
+        <h2 id="footer-social-title" class="mb-4 text-lg font-bold">Síguenos</h2>
+        <div class="flex gap-3">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-link bg-blue-600 hover:bg-blue-700">Facebook</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="social-link bg-sky-500 hover:bg-sky-600">Twitter</a>
+        </div>
+      </section>
+    </div>
 
-        Facebook
-
-    </a>
-
+    <div class="mt-10 border-t border-gray-800 pt-6 text-center text-sm text-gray-500">
+      <p>&copy; 2026 IESPH. Todos los derechos reservados.</p>
+    </div>
+  </div>
 </footer>
