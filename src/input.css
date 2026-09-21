@@ -1,61 +1,54 @@
-<<<<<<< HEAD
 @import "tailwindcss";
-=======
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
->>>>>>> 2f92ed03c94c58f18963ef87ae972b433f1628e9
 
-/* ===== Paleta de Colores ===== */
+:root {
+  --color-primary-50: #eef4ff;
+  --color-primary-100: #dfeaff;
+  --color-primary-200: #bfd4ff;
+  --color-primary-300: #9ab7ff;
+  --color-primary-400: #7189ff;
+  --color-primary-500: #5b4fdc;
+  --color-primary-600: #4337c7;
+  --color-primary-700: #362ea3;
+  --color-primary-800: #2b257d;
+  --color-primary-900: #1d1d52;
+
+  --color-accent-50: #edfaff;
+  --color-accent-100: #d5f3ff;
+  --color-accent-200: #abe6ff;
+  --color-accent-300: #7ad7ff;
+  --color-accent-400: #50c2ff;
+  --color-accent-500: #1ea5ff;
+  --color-accent-600: #1187e6;
+  --color-accent-700: #106ec2;
+
+  --color-secondary-50: #f6f2ff;
+  --color-secondary-100: #efe4ff;
+  --color-secondary-200: #e0c9ff;
+  --color-secondary-300: #cfa8ff;
+  --color-secondary-400: #b77dff;
+  --color-secondary-500: #a45ff7;
+  --color-secondary-600: #8d42df;
+  --color-secondary-700: #6f2db6;
+
+  --color-gray-50: #f8fafc;
+  --color-gray-100: #e5ecf4;
+  --color-gray-200: #d2dbe8;
+  --color-gray-300: #aab8cc;
+  --color-gray-400: #7d8ea8;
+  --color-gray-500: #586b8a;
+  --color-gray-600: #334b73;
+  --color-gray-700: #1c325b;
+  --color-gray-800: #081d3d;
+  --color-gray-900: #020d1f;
+}
+
 .icon-container svg {
   width: 2rem !important;
   height: 2rem !important;
   max-width: 2rem !important;
   max-height: 2rem !important;
 }
-:root {
-  --color-primary-50: #eff6ff;
-  --color-primary-100: #dbeafe;
-  --color-primary-200: #bfdbfe;
-  --color-primary-300: #93c5fd;
-  --color-primary-400: #60a5fa;
-  --color-primary-500: #3b82f6;
-  --color-primary-600: #2563eb;
-  --color-primary-700: #1d4ed8;
-  --color-primary-800: #1e40af;
-  --color-primary-900: #172554;
 
-  --color-accent-50: #f0fdfa;
-  --color-accent-100: #ccfbf1;
-  --color-accent-200: #99f6e4;
-  --color-accent-300: #5eead4;
-  --color-accent-400: #2dd4bf;
-  --color-accent-500: #14b8a6;
-  --color-accent-600: #0d9488;
-  --color-accent-700: #0f766e;
-
-  --color-secondary-50: #faf5ff;
-  --color-secondary-100: #f3e8ff;
-  --color-secondary-200: #e9d5ff;
-  --color-secondary-300: #d8b4fe;
-  --color-secondary-400: #c084fc;
-  --color-secondary-500: #a855f7;
-  --color-secondary-600: #9333ea;
-  --color-secondary-700: #7e22ce;
-
-  --color-gray-50: #f9fafb;
-  --color-gray-100: #f3f4f6;
-  --color-gray-200: #e5e7eb;
-  --color-gray-300: #d1d5db;
-  --color-gray-400: #9ca3af;
-  --color-gray-500: #6b7280;
-  --color-gray-600: #4b5563;
-  --color-gray-700: #374151;
-  --color-gray-800: #1f2937;
-  --color-gray-900: #0f172a;
-}
-
-/* ===== Animaciones ===== */
 @layer utilities {
   @keyframes fadeInUp {
     from {
@@ -102,21 +95,18 @@
     animation: slideInRight 0.6s ease-out 0.2s both;
   }
 }
-
-<<<<<<< HEAD
-/* Clases personalizadas sin @apply */
 .btn-primary {
   padding: 0.75rem 1.5rem;
   background: linear-gradient(135deg, #4a55d7 0%, #2a8fff 100%);
   color: #ffffff;
   font-weight: 600;
-  border-radius: 0.5rem;
-  transition: all 0.2s;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
   box-shadow: 0 8px 18px rgba(72, 87, 219, 0.28);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #3c45b6 0%, #217be0 100%);
+  background: linear-gradient(135deg, #3b48bf 0%, #1f7fe4 100%);
   box-shadow: 0 10px 22px rgba(72, 87, 219, 0.32);
 }
 
@@ -125,14 +115,12 @@
   background: linear-gradient(135deg, #f0e7ff 0%, #d8ecff 100%);
   color: #332d73;
   font-weight: 600;
-  border-radius: 0.5rem;
-  transition: all 0.2s;
-  box-shadow: 0 4px 10px rgba(91, 79, 220, 0.12);
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
 }
 
 .btn-secondary:hover {
-  background: linear-gradient(135deg, #e8dcff 0%, #cfe8ff 100%);
-  box-shadow: 0 10px 18px rgba(91, 79, 220, 0.18);
+  background: linear-gradient(135deg, #e7dcff 0%, #cfeaff 100%);
 }
 
 .btn-outline {
@@ -140,8 +128,8 @@
   border: 2px solid #4a55d7;
   color: #2d2f8f;
   font-weight: 600;
-  border-radius: 0.5rem;
-  transition: all 0.2s;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
 }
 
 .btn-outline:hover {
@@ -160,40 +148,74 @@
   .container-custom {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-=======
-/* ===== Componentes ===== */
-@layer components {
-  .btn-primary {
-    @apply px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg
-      transition-all duration-300 shadow-lg hover:shadow-xl
-      hover:bg-primary-700 hover:-translate-y-0.5 inline-block text-center;
->>>>>>> 2f92ed03c94c58f18963ef87ae972b433f1628e9
   }
+}
 
-  .btn-primary.bg-white {
-    @apply bg-white text-primary-600 hover:bg-gray-100;
-  }
-
-  .btn-outline {
-    @apply px-6 py-3 border-2 border-primary-600 text-primary-600
-      font-semibold rounded-lg transition-all duration-300
-      hover:bg-primary-50 inline-block text-center;
-  }
-
-  .btn-outline.border-white {
-    @apply border-white text-white hover:bg-white hover:text-primary-600;
-  }
-
-  .card-base {
-    @apply bg-white rounded-2xl shadow-xl border border-gray-200
-      transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
-  }
-
-  .section-title {
-    @apply text-3xl md:text-4xl font-bold text-gray-900 mb-6;
-  }
-
+@media (min-width: 1024px) {
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.section-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .section-title {
+    font-size: 2.25rem;
+  }
+}
+
+.card-base {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.card-base:hover {
+  box-shadow: 0 20px 35px rgba(15, 23, 42, 0.12);
+  transform: translateY(-2px);
+}
+
+.text-shadow-sm {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.text-shadow-md {
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+.transition-fast {
+  transition: all 0.2s;
+}
+
+.transition-smooth {
+  transition: all 0.3s;
+}
+
+.gap-base {
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .gap-base {
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gap-base {
+    gap: 2rem;
   }
 }
