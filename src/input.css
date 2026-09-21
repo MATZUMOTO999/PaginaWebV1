@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "./styles.css";
 
 /* ===== Animaciones personalizadas ===== */
 @layer utilities {
@@ -52,45 +51,45 @@
 /* Clases personalizadas sin @apply */
 .btn-primary {
   padding: 0.75rem 1.5rem;
-  background-color: rgb(37, 99, 235);
-  color: rgb(55, 211, 81);
+  background: linear-gradient(135deg, #4a55d7 0%, #2a8fff 100%);
+  color: #ffffff;
   font-weight: 600;
   border-radius: 0.5rem;
   transition: all 0.2s;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 18px rgba(72, 87, 219, 0.28);
 }
 
 .btn-primary:hover {
-  background-color: rgb(29, 78, 216);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #3c45b6 0%, #217be0 100%);
+  box-shadow: 0 10px 22px rgba(72, 87, 219, 0.32);
 }
 
 .btn-secondary {
   padding: 0.75rem 1.5rem;
-  background-color: rgb(245, 158, 11);
-  color: rgb(3, 1, 1);
+  background: linear-gradient(135deg, #f0e7ff 0%, #d8ecff 100%);
+  color: #332d73;
   font-weight: 600;
   border-radius: 0.5rem;
   transition: all 0.2s;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(91, 79, 220, 0.12);
 }
 
 .btn-secondary:hover {
-  background-color: rgb(217, 119, 6);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #e8dcff 0%, #cfe8ff 100%);
+  box-shadow: 0 10px 18px rgba(91, 79, 220, 0.18);
 }
 
 .btn-outline {
   padding: 0.75rem 1.5rem;
-  border: 2px solid rgb(37, 99, 235);
-  color: rgb(37, 99, 235);
+  border: 2px solid #4a55d7;
+  color: #2d2f8f;
   font-weight: 600;
   border-radius: 0.5rem;
   transition: all 0.2s;
 }
 
 .btn-outline:hover {
-  background-color: rgb(240, 247, 255);
+  background-color: rgba(74, 85, 215, 0.08);
 }
 
 .container-custom {
