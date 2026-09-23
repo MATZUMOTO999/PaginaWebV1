@@ -18,8 +18,112 @@
     h1, h2, h3, h4 { color: #333; }
     p { color: #666; line-height: 1.6; }
     
-    /* Ocultar elementos que eran enlaces para limpiar la vista */
-    a { text-decoration: none; color: inherit; pointer-events: none; cursor: default; }
+    /* Menú principal con dropdown */
+    nav { position: relative; }
+    .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .main-nav > li {
+        position: relative;
+        list-style: none;
+    }
+    .nav-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 18px 10px 16px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #1f2937;
+        text-decoration: none;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        pointer-events: auto;
+        font-family: inherit;
+        transition: color 0.2s ease;
+    }
+    .nav-link:hover,
+    .nav-link:focus,
+    .nav-item.open > .nav-link {
+        color: #0f172a;
+    }
+    .nav-item.has-dropdown > .nav-link::after {
+        content: "▾";
+        font-size: 0.85rem;
+        transform: translateY(-1px);
+    }
+    .nav-item.has-dropdown > .nav-link {
+        padding-right: 16px;
+    }
+    .nav-item.has-dropdown .dropdown-menu {
+        position: absolute;
+        left: 0;
+        top: calc(100% + 10px);
+        min-width: 260px;
+        background: rgba(255, 255, 255, 0.96);
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
+        padding: 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(8px);
+        transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+        z-index: 30;
+        overflow: hidden;
+    }
+    .nav-item.has-dropdown .dropdown-menu::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 6px;
+        background: linear-gradient(90deg, #2d8cff 0%, #2d8cff 100%);
+    }
+    .nav-item.has-dropdown:hover .dropdown-menu,
+    .nav-item.has-dropdown:focus-within .dropdown-menu,
+    .nav-item.has-dropdown.open .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    .dropdown-menu a {
+        display: block;
+        padding: 18px 22px;
+        color: #1f2937;
+        text-decoration: none;
+        font-size: 1.02rem;
+        font-weight: 600;
+        background: rgba(255, 255, 255, 0.7);
+        transition: background 0.2s ease, color 0.2s ease;
+        pointer-events: auto;
+        cursor: pointer;
+    }
+    .dropdown-menu a:hover,
+    .dropdown-menu a:focus {
+        background: rgba(37, 99, 235, 0.05);
+        color: #0f172a;
+    }
+    .menu-accent {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        height: 6px;
+        background: #2d8cff;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+    .nav-item.has-dropdown:hover .menu-accent,
+    .nav-item.has-dropdown:focus-within .menu-accent,
+    .nav-item.has-dropdown.open .menu-accent {
+        opacity: 1;
+    }
+    a { text-decoration: none; color: inherit; }
 </style>
 </head>
 <body class="home wp-singular page-template-default page page-id-2392">
@@ -58,16 +162,31 @@
                     <div class="logo">
                         <img src="https://iestphuanta.edu.pe/wp-content/uploads/2021/12/WhatsApp-Image-2025-09-17-at-12.55.48-PM-Photoroom.png" alt="Logo IESTP Huanta" style="height: 60px;">
                     </div>
-                    <nav>
-                        <ul style="list-style: none; display: flex; gap: 20px; padding: 0; margin: 0;">
-                            <li>Nosotros</li>
-                            <li>Programas de estudios</li>
-                            <li>Admisión y Matricula</li>
-                            <li>Transparencia</li>
-                            <li>Tramite</li>
-                            <li>Contáctanos</li>
-                            <li>Servicios</li>
-                            <li>Otras páginas</li>
+                    <nav aria-label="Menú principal">
+                        <ul class="main-nav">
+                            <li><a href="#" class="nav-link">Nosotros</a></li>
+                            <li><a href="#" class="nav-link">Programas de estudios</a></li>
+                            <li><a href="#" class="nav-link">Admisión y Matricula</a></li>
+                            <li><a href="#" class="nav-link">Transparencia</a></li>
+                            <li><a href="#" class="nav-link">Tramite</a></li>
+                            <li><a href="#" class="nav-link">Contáctanos</a></li>
+                            <li class="nav-item has-dropdown">
+                                <button type="button" class="nav-link" aria-expanded="false">Servicios</button>
+                                <span class="menu-accent" aria-hidden="true"></span>
+                                <div class="dropdown-menu" role="menu" aria-label="Submenú de servicios">
+                                    <a href="#" role="menuitem">Biblioteca</a>
+                                    <a href="#" role="menuitem">Servicios complementarios</a>
+                                    <a href="#" role="menuitem">Bolsa Laboral</a>
+                                </div>
+                            </li>
+                            <li class="nav-item has-dropdown">
+                                <button type="button" class="nav-link" aria-expanded="false">Otras páginas</button>
+                                <span class="menu-accent" aria-hidden="true"></span>
+                                <div class="dropdown-menu" role="menu" aria-label="Otras páginas">
+                                    <a href="#" role="menuitem">Links Institucionales</a>
+                                    <a href="#" role="menuitem">Noticias</a>
+                                </div>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -184,6 +303,42 @@
         </div>
     </footer>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const dropdowns = document.querySelectorAll('.nav-item.has-dropdown');
+
+    dropdowns.forEach((dropdown) => {
+      const button = dropdown.querySelector('.nav-link');
+
+      button.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const isOpen = dropdown.classList.contains('open');
+
+        dropdowns.forEach((item) => {
+          item.classList.remove('open');
+          const btn = item.querySelector('.nav-link');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+          dropdown.classList.add('open');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('.nav-item.has-dropdown')) {
+        dropdowns.forEach((dropdown) => {
+          dropdown.classList.remove('open');
+          const button = dropdown.querySelector('.nav-link');
+          button.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
