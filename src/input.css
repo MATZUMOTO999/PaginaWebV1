@@ -369,28 +369,29 @@ nav {
 }
 
 .main-header {
-    background: linear-gradient(90deg, #1d57d8 0%, #2b7ef3 23%, #4a57d5 100%);
+    background: linear-gradient(90deg, #0d3b8c 0%, #1d5fe8 32%, #2d62d4 100%);
     box-shadow: inset 0 -1px 0 rgba(255,255,255,0.18);
 }
 
 .main-header .container {
-    max-width: 1380px;
+    max-width: 1500px;
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 0 18px;
 }
 
 .header-row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    min-height: 112px;
-    gap: 20px;
+    justify-content: flex-start;
+    min-height: 110px;
+    gap: 24px;
 }
 
 .brand {
-    min-width: 200px;
+    min-width: 190px;
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .brand-mark {
@@ -398,13 +399,27 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 200px;
-    height: 72px;
-    background: linear-gradient(135deg, #f1eeee 0%, #e4e7e7 100%);
-    border-radius: 10px 10px 18px 10px;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-    overflow: hidden;
-    border: 3px solid rgba(255,255,255,0.7);
+    width: 180px;
+    height: 68px;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+    border: none;
+    flex-shrink: 0;
+}
+
+.brand-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.brand-link img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .brand-mark::before {
@@ -457,12 +472,13 @@ nav {
 .main-nav {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 18px;
     list-style: none;
     padding: 0;
     margin: 0;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    white-space: nowrap;
 }
 
 .main-nav > li {
@@ -474,23 +490,25 @@ nav {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 18px 10px 16px;
-    font-size: 1.12rem;
+    padding: 14px 8px 12px;
+    font-size: 1.05rem;
     font-weight: 700;
-    color: #122ebd;
+    color: #eaf2ff;
     text-decoration: none;
     background: transparent;
     border: 0;
     cursor: pointer;
     pointer-events: auto;
     font-family: inherit;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
 }
 
 .nav-link:hover,
 .nav-link:focus,
 .nav-item.open > .nav-link {
     color: #ffffff;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.25);
 }
 
 .nav-item.has-dropdown > .nav-link::after {
@@ -508,9 +526,9 @@ nav {
     left: 0;
     top: calc(100% + 10px);
     min-width: 250px;
-    background: rgba(243, 240, 240, 0.96);
+    background: rgba(11, 31, 74, 0.96);
     border-radius: 0 0 10px 10px;
-    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
     padding: 0;
     opacity: 0;
     visibility: hidden;
@@ -531,11 +549,11 @@ nav {
 .dropdown-menu a {
     display: block;
     padding: 16px 18px;
-    color: #1f2937;
+    color: #edf4ff;
     text-decoration: none;
     font-size: 0.97rem;
     font-weight: 600;
-    background: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.04);
     transition: background 0.2s ease, color 0.2s ease;
     pointer-events: auto;
     cursor: pointer;
@@ -543,8 +561,8 @@ nav {
 
 .dropdown-menu a:hover,
 .dropdown-menu a:focus {
-    background: rgba(37, 99, 235, 0.05);
-    color: #0f172a;
+    background: rgba(96, 165, 250, 0.18);
+    color: #ffffff;
 }
 
 .menu-accent {
