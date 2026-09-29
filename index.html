@@ -4,157 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Iestp"Huanta" - Sin Enlaces</title>
-<style>
-    /* Estilos básicos para visualizar la estructura sin los CSS externos complejos */
-    body { font-family: 'Nunito', sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-    header, footer { background-color: #fff; padding: 20px; border-bottom: 1px solid #ddd; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
-    .row { display: flex; flex-wrap: wrap; }
-    .col-12 { width: 100%; }
-    .site-content { padding: 40px 0; }
-    
-    /* Simulación de elementos visuales comunes */
-    img { max-width: 100%; height: auto; }
-    h1, h2, h3, h4 { color: #333; }
-    p { color: #666; line-height: 1.6; }
-    
-    /* Menú principal con dropdown */
-    nav { position: relative; }
-    .main-nav {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    .main-nav > li {
-        position: relative;
-        list-style: none;
-    }
-    .nav-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 18px 10px 16px;
-        font-size: 1.1rem;
-        font-weight: 700;
-        color: #1f2937;
-        text-decoration: none;
-        background: transparent;
-        border: 0;
-        cursor: pointer;
-        pointer-events: auto;
-        font-family: inherit;
-        transition: color 0.2s ease;
-    }
-    .nav-link:hover,
-    .nav-link:focus,
-    .nav-item.open > .nav-link {
-        color: #0f172a;
-    }
-    .nav-item.has-dropdown > .nav-link::after {
-        content: "▾";
-        font-size: 0.85rem;
-        transform: translateY(-1px);
-    }
-    .nav-item.has-dropdown > .nav-link {
-        padding-right: 16px;
-    }
-    .nav-item.has-dropdown .dropdown-menu {
-        position: absolute;
-        left: 0;
-        top: calc(100% + 10px);
-        min-width: 260px;
-        background: rgba(255, 255, 255, 0.96);
-        border-radius: 0 0 10px 10px;
-        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
-        padding: 0;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(8px);
-        transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
-        z-index: 30;
-        overflow: hidden;
-    }
-    .nav-item.has-dropdown:hover .dropdown-menu,
-    .nav-item.has-dropdown:focus-within .dropdown-menu,
-    .nav-item.has-dropdown.open .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-    .dropdown-menu a {
-        display: block;
-        padding: 18px 22px;
-        color: #1f2937;
-        text-decoration: none;
-        font-size: 1.02rem;
-        font-weight: 600;
-        background: rgba(255, 255, 255, 0.7);
-        transition: background 0.2s ease, color 0.2s ease;
-        pointer-events: auto;
-        cursor: pointer;
-    }
-    .dropdown-menu a:hover,
-    .dropdown-menu a:focus {
-        background: rgba(37, 99, 235, 0.05);
-        color: #0f172a;
-    }
-    .menu-accent {
-        position: absolute;
-        left: 0;
-        top: 100%;
-        width: 100%;
-        height: 6px;
-        background: #2d8cff;
-        opacity: 0;
-        transition: opacity 0.2s ease;
-    }
-    .nav-item.has-dropdown:hover .menu-accent,
-    .nav-item.has-dropdown:focus-within .menu-accent,
-    .nav-item.has-dropdown.open .menu-accent {
-        opacity: 1;
-    }
-    a { text-decoration: none; color: inherit; }
-</style>
+<link rel="stylesheet" href="./src/output.css" />
 </head>
 <body class="home wp-singular page-template-default page page-id-2392">
 
 <div id="page" class="site">
     <header id="ct-header-elementor" class="is-sticky">
-        <div class="ct-header-content">
+        <div class="topbar">
             <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <!-- Información de contacto (sin enlaces) -->
-                        <div style="display: flex; gap: 20px; align-items: center; justify-content: space-between;">
-                            <div>
-                                <span><i class="icon-phone"></i> (066) 322296</span>
-                            </div>
-                            <div>
-                                <span><i class="icon-map"></i> Jr. Córdova N° 650</span>
-                            </div>
-                            <div>
-                                <span><i class="icon-mail"></i> contactos@iestphuanta.edu.pe</span>
-                            </div>
-                            <!-- Iconos sociales sin enlace -->
-                            <div>
-                                <i class="fab fa-facebook-f"></i>
-                            </div>
-                        </div>
-                    </div>
+                <div class="contact-strip">
+                    <div class="contact-item"><span class="contact-icon">☎</span><span>(066) 322296</span></div>
+                    <div class="contact-item"><span class="contact-icon">⌂</span><span>Jr. Córdova N° 650</span></div>
+                    <div class="contact-item"><span class="contact-icon">✉</span><span>contactos@iestphuanta.edu.pe</span></div>
+                   <div class="social-icon"><a href="https://www.facebook.com/profile.php?id=61557665334329&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer">f</a></div>
                 </div>
             </div>
         </div>
+
+        <div class="main-header"> 
+    
         
-        <!-- Menú Principal (Texto plano, sin enlaces) -->
-        <div class="ct-header-main">
-            <div class="container">
-                <div class="row" style="align-items: center; justify-content: space-between;">
-                    <div class="logo">
-                        <img src="https://iestphuanta.edu.pe/wp-content/uploads/2021/12/WhatsApp-Image-2025-09-17-at-12.55.48-PM-Photoroom.png" alt="Logo IESTP Huanta" style="height: 60px;">
-                    </div>
+           
+                <div class="brand-mark">
+                    <a href="./index.html" class="brand-link" aria-label="Ir al inicio">
+                        <img src="./assets/logo%20ies%20huanta.png"  />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
                     <nav aria-label="Menú principal">
                         <ul class="main-nav">
                             <li><a href="#" class="nav-link">Nosotros</a></li>
@@ -236,7 +115,7 @@
                         <p>En el Instituto de Educación Superior Tecnológico Huanta, te ofrecemos la oportunidad de convertirte en un profesional técnico altamente capacitado en solo 3 años.</p>
                     </div>
                     <div style="margin-top: 20px;">
-                        <strong>Contactos:</strong> (066) 322296
+                        <strong>Contactos:</strong> 926 123 456
                     </div>
                 </div>
                 <div style="flex: 1;">
@@ -283,7 +162,7 @@
                 <div style="flex: 1;">
                     <h4>Información</h4>
                     <p>Jr. Córdova N° 650</p>
-                    <p>Teléfono: (066) 322296</p>
+                    <p>Teléfono: 92 123 456</p>
                 </div>
                 <div style="flex: 1;">
                     <h4>Horario de atención</h4>
