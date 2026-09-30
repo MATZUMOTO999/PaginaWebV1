@@ -1,0 +1,61 @@
+<style>
+	.home-library {
+		padding: 48px 24px;
+		background: #f3f6fa;
+		border-top: 1px solid #d9e2ec;
+	}
+
+	.home-library-inner {
+		width: min(1100px, 100%);
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: minmax(0, 1.4fr) minmax(220px, 0.8fr);
+		align-items: center;
+		gap: 32px;
+	}
+
+	.home-library h2 {
+		margin: 0 0 12px;
+		color: #163b5c;
+		font-size: 28px;
+	}
+
+	.home-library p {
+		margin: 0;
+		color: #425466;
+		line-height: 1.7;
+	}
+
+	.home-library-link {
+		display: inline-flex;
+		justify-content: center;
+		padding: 13px 18px;
+		color: #fff;
+		background: #1475f7;
+		border-radius: 4px;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.home-library-link:hover,
+	.home-library-link:focus-visible {
+		background: #0d3f9d;
+	}
+
+	@media (max-width: 640px) {
+		.home-library-inner {
+			grid-template-columns: 1fr;
+			gap: 20px;
+		}
+	}
+</style>
+
+<section class="home-library" aria-labelledby="home-library-title">
+	<div class="home-library-inner">
+		<div>
+			<h2 id="home-library-title">Biblioteca</h2>
+			<p>Explora recursos de consulta y materiales que apoyan tu aprendizaje y tus proyectos de investigación.</p>
+		</div>
+		<a class="home-library-link" href="./pages/biblioteca.html">Visitar la biblioteca</a>
+	</div>
+</section>

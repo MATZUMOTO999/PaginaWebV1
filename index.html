@@ -5,6 +5,116 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Iestp"Huanta" - Sin Enlaces</title>
 <link rel="stylesheet" href="./src/output.css" />
+<style>
+    #colophon {
+        padding: 48px 24px 20px;
+        background: #202933;
+        color: #f7fafc;
+    }
+
+    #colophon .footer-inner {
+        width: min(1120px, 100%);
+        margin: 0 auto;
+    }
+
+    #colophon .footer-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr 1fr;
+        gap: 48px;
+        padding-bottom: 36px;
+    }
+
+    #colophon .footer-brand img {
+        display: block;
+        width: auto;
+        max-width: 190px;
+        height: 58px;
+        object-fit: contain;
+        object-position: left center;
+    }
+
+    #colophon h2 {
+        margin: 0 0 16px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    #colophon p,
+    #colophon address,
+    #colophon a {
+        color: #c6d0dc;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    #colophon p {
+        margin: 14px 0 0;
+        max-width: 300px;
+    }
+
+    #colophon address {
+        display: grid;
+        gap: 8px;
+        font-style: normal;
+    }
+
+    #colophon a:hover,
+    #colophon a:focus-visible {
+        color: #fff;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    #colophon .footer-social {
+        display: inline-flex;
+        margin-top: 14px;
+        padding: 8px 12px;
+        border: 1px solid #68798b;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    #colophon .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding-top: 18px;
+        border-top: 1px solid #465362;
+    }
+
+    #colophon .footer-bottom p {
+        max-width: none;
+        margin: 0;
+    }
+
+    @media (max-width: 700px) {
+        #colophon .footer-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 32px 24px;
+        }
+
+        #colophon .footer-brand {
+            grid-column: 1 / -1;
+        }
+    }
+
+    @media (max-width: 460px) {
+        #colophon .footer-grid {
+            grid-template-columns: 1fr;
+        }
+
+        #colophon .footer-brand {
+            grid-column: auto;
+        }
+
+        #colophon .footer-bottom {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+</style>
 </head>
 <body class="home wp-singular page-template-default page page-id-2392">
 
@@ -179,37 +289,43 @@
                 </div>
             </section>
 
+            <div id="biblioteca-component">
+                <p><a href="./pages/biblioteca.html">Visitar la biblioteca</a></p>
+            </div>
+
         </div>
     </div>
 
-    <footer id="colophon" class="site-footer-custom" style="background: #333; color: white; padding: 40px 0;">
-        <div class="container">
-            <div class="row" style="justify-content: space-between;">
-                <div style="flex: 1;">
-                    <img src="https://iestphuanta.edu.pe/wp-content/uploads/2021/12/WhatsApp-Image-2025-09-17-at-12.55.48-PM-Photoroom.png" alt="Logo Footer" style="height: 50px; filter: brightness(0) invert(1);">
-                    <p>Instituto de Educación Superior Público “Huanta”</p>
-                </div>
-                <div style="flex: 1;">
-                    <h4>Facebook</h4>
-                    <i class="fab fa-facebook-f"></i>
-                </div>
-                <div style="flex: 1;">
-                    <h4>Información</h4>
-                    <p>Jr. Córdova N° 650</p>
-                    <p>Teléfono: 92 123 456</p>
-                </div>
-                <div style="flex: 1;">
-                    <h4>Horario de atención</h4>
-                    <p>Lun – Vier: 7:30 am – 1:15 pm</p>
-                </div>
+    <footer id="colophon" class="site-footer-custom">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <section class="footer-brand" aria-label="Instituto">
+                    <img src="./assets/logo%20ies%20huanta.png" alt="Logo del IES Huanta">
+                    <p>Instituto de Educación Superior Público “Huanta”. Formando profesionales para el futuro.</p>
+                </section>
+                <section aria-labelledby="footer-contact-title">
+                    <h2 id="footer-contact-title">Contacto</h2>
+                    <address>
+                        <a href="https://maps.app.goo.gl/ZFAEK77MSjC9hejN9" target="_blank" rel="noopener noreferrer">Jr. Córdova N° 650, Huanta</a>
+                        <a href="tel:+51066322296">(066) 322296</a>
+                        <a href="mailto:contactos@iestphuanta.edu.pe">contactos@iestphuanta.edu.pe</a>
+                    </address>
+                </section>
+                <section aria-labelledby="footer-hours-title">
+                    <h2 id="footer-hours-title">Atención y redes</h2>
+                    <p>Lunes a viernes<br>7:30 a. m. – 1:15 p. m.</p>
+                    <a class="footer-social" href="https://www.facebook.com/profile.php?id=61557665334329" target="_blank" rel="noopener noreferrer">Facebook</a>
+                </section>
             </div>
-            <div style="text-align: center; margin-top: 40px; border-top: 1px solid #555; padding-top: 20px;">
+            <div class="footer-bottom">
                 <p>© 2026 Instituto de Educación Superior Público “Huanta”</p>
+                <a href="#page">Volver al inicio</a>
             </div>
         </div>
     </footer>
 </div>
 
+<script src="./js/app.js" defer></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const dropdowns = document.querySelectorAll('.nav-item.has-dropdown');
