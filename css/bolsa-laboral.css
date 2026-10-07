@@ -1,0 +1,233 @@
+:root {
+  --primary: #0d5bd5;
+  --primary-dark: #0b3f9e;
+  --primary-soft: #eaf2ff;
+  --text: #1d2a3a;
+  --muted: #586779;
+  --bg: #edf2f7;
+  --white: #ffffff;
+  --line: rgba(148, 166, 191, 0.42);
+  --navy: #081d3a;
+  --navy-2: #0d2149;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  font-family: 'Nunito', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a { text-decoration: none; }
+
+.page-hero {
+  position: relative;
+  min-height: 300px;
+  background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1800&q=80');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(13, 27, 54, 0.52), rgba(13, 27, 54, 0.62));
+}
+
+.page-hero-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+}
+
+.page-hero h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+}
+
+.main-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+.content-panel {
+  background: rgba(255,255,255,0.78);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 18px 42px rgba(17, 24, 39, 0.05);
+  margin-top: -18px;
+  padding: 30px 28px 24px;
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.section-head .eyebrow {
+  display: inline-block;
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.section-head h2 {
+  margin: 8px 0 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.title-rule {
+  width: 155px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(9, 93, 214, 0.28), var(--primary), rgba(9, 93, 214, 0.28));
+  margin: 12px auto 0;
+}
+
+.intro {
+  max-width: 980px;
+  margin: 22px auto 28px;
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.cta-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 260px;
+  min-height: 78px;
+  padding: 16px 34px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #0e5fe5, #0a4ab6);
+  box-shadow: 0 12px 24px rgba(11, 90, 214, 0.2);
+  color: #fff;
+  font-size: 1.12rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.footer-area {
+  background: linear-gradient(180deg, #0b1c3d 0%, #0d1f3f 100%);
+  color: rgba(255,255,255,0.88);
+  margin-top: 28px;
+  padding: 22px 0 18px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  align-items: center;
+  gap: 18px;
+}
+
+.brand-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-box .icon {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1ea0ff, #1a67f2);
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 900;
+  font-size: 1rem;
+  box-shadow: 0 8px 20px rgba(30, 160, 255, 0.3);
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.brand-copy strong {
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.brand-copy span {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.72);
+}
+
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  color: rgba(255,255,255,0.78);
+  font-size: 0.85rem;
+}
+
+.footer-list strong {
+  color: #fff;
+  font-size: 0.92rem;
+  margin-bottom: 2px;
+  display: block;
+}
+
+.legal {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  text-align: center;
+  color: rgba(255,255,255,0.72);
+  font-size: 0.76rem;
+}
+
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr; text-align: center; }
+  .brand-box { justify-content: center; }
+  .footer-list { justify-items: center; }
+}

@@ -1,5 +1,6 @@
 /* =========================================
    1. VARIABLES GLOBALES (:root)
+   Centralizan colores, tamaños y opciones usadas por el tema y sus componentes.
    ========================================= */
 :root {
     /* Colores Principales del Tema */
@@ -53,7 +54,7 @@
     --sr-7-css-loaded: 1;
 }
 
-/* Variables de Bootstrap / Sistema */
+/* Variables de Bootstrap / Sistema: paleta, puntos de quiebre y fuentes base. */
 :root {
     --blue: #007bff;
     --indigo: #6610f2;
@@ -89,7 +90,7 @@
     --font-family-mitospace: "SFMitfirm-Regular", Menlo, Monaco, Consolas, "Liberation Mito", "Courier New", mitospace;
 }
 
-/* Variables de WooCommerce */
+/* Variables de WooCommerce: colores y medidas para componentes de tienda y formularios. */
 :root {
     --woocommerce: #720eec;
     --wc-green: #008a20;
@@ -110,7 +111,7 @@
     --wc-card-border-radius: 8px;
 }
 
-/* Variables de Elementor Global Kit */
+/* Variables de Elementor Global Kit: colores y tipografías configurables del constructor. */
 .elementor-kit-6 {
     --e-global-color-primary: #6EC1E4;
     --e-global-color-secondary: #54595F;
@@ -130,7 +131,7 @@
     --e-global-typography-accent-font-weight: 500;
 }
 
-/* Variables de WordPress Presets */
+/* Variables de WordPress Presets: proporciones, colores, gradientes, espacios y sombras reutilizables. */
 :root {
     --wp--preset--aspect-ratio--square: 1;
     --wp--preset--aspect-ratio--4-3: 4 / 3;
@@ -186,7 +187,7 @@
     --wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);
 }
 
-/* Variables de Swiper */
+/* Variables de Swiper: tamaño y color predeterminados de navegación del carrusel. */
 :root {
     --swiper-navigation-size: 44px;
     --swiper-theme-color: #007aff;
@@ -194,9 +195,10 @@
 
 /* =========================================
    2. RESET Y BASE (HTML, BODY, *)
+   Normaliza el modelo de caja, el documento y los estilos iniciales del navegador.
    ========================================= */
 
-/* Box Sizing Global */
+/* Hace que el tamaño de los elementos incluya bordes y rellenos. */
 *, *:before, *:after {
     box-sizing: inherit;
 }
@@ -205,7 +207,7 @@
     box-sizing: border-box;
 }
 
-/* HTML Base */
+/* Define ajustes tipográficos y de renderizado generales para el documento. */
 html {
     font-family: sans-serif;
     line-height: 1.15;
@@ -215,7 +217,7 @@ html {
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Body Base Styles */
+/* Establece el margen, la fuente, el color, el fondo y el comportamiento general de la página. */
 body {
     margin: 0; /* Override user agent stylesheet */
     padding-top: 0px;
@@ -243,7 +245,7 @@ body {
     text-align: left;
 }
 
-/* User Agent Style Reset for Body */
+/* Conserva el tipo de visualización del body y vuelve a neutralizar su margen predeterminado. */
 body {
     display: block;
     /* margin: 8px is default UA, overridden by body { margin: 0 } above */
@@ -255,6 +257,7 @@ body {
 
 /* =========================================
    3. FUENTES (@font-face)
+   Carga la variante itálica de Nunito para mostrarla cuando se solicite.
    ========================================= */
 @font-face {
     font-family: 'Nunito';
@@ -269,7 +272,14 @@ body {
 @tailwind components;
 @tailwind utilities;
 
-/* Cabecera institucional */
+/* Incorpora las capas base, componentes y utilidades de Tailwind durante la compilación. */
+
+/* =========================================
+   4. ESTILOS LEGADOS DE LA PLANTILLA INSTITUCIONAL
+   Reglas generales de estructura, cabecera, navegación y marca.
+   ========================================= */
+
+/* Base visual usada por las páginas de la plantilla institucional. */
 body {
     font-family: 'Nunito', sans-serif;
     margin: 0;
@@ -277,54 +287,65 @@ body {
     background-color: #f5f3f3;
 }
 
+/* Apariencia general de los encabezados y pies de página de la plantilla. */
 header, footer {
     background-color: #fcf7f7;
     padding: 20px;
     border-bottom: 1px solid #f5f2f2;
 }
 
+/* Limita el ancho del contenido y centra sus bloques principales. */
 .container {
     max-width: 1380px;
     margin: 0 auto;
     padding: 0 16px;
 }
 
+/* Distribuye columnas en filas y permite que pasen a otra línea. */
 .row {
     display: flex;
     flex-wrap: wrap;
 }
 
+/* Hace que una columna ocupe todo el ancho disponible. */
 .col-12 {
     width: 100%;
 }
 
+/* Añade espacio vertical alrededor del contenido principal. */
 .site-content {
     padding: 40px 0;
 }
 
+/* Evita que las imágenes superen el ancho de su contenedor y conserva su proporción. */
 img {
     max-width: 100%;
     height: auto;
 }
 
+/* Aplica el color tipográfico común a los encabezados. */
 h1, h2, h3, h4 {
     color: #333;
 }
 
+/* Define el color y la altura de línea predeterminados de los párrafos. */
 p {
     color: #666;
     line-height: 1.6;
 }
 
+/* Proporciona una referencia de posicionamiento para los elementos de navegación. */
 nav {
     position: relative;
 }
 
+/* Estiliza la franja superior de contacto de la cabecera. */
 .topbar {
     background: #f7f3f3;
     border-bottom: 1px solid #f7f4f4;
 }
 
+/* Alinea los datos de contacto y permite acomodarlos en varias líneas. */
 .contact-strip {
     display: flex;
     align-items: center;
@@ -336,6 +357,7 @@ nav {
     font-weight: 700;
 }
 
+/* Alinea cada dato de contacto con su icono correspondiente. */
 .contact-item {
     display: inline-flex;
     align-items: center;
@@ -343,6 +365,7 @@ nav {
     font-size: 1.05rem;
 }
 
+/* Da tamaño y color uniforme a los iconos de contacto. */
 .contact-icon {
     display: inline-flex;
     align-items: center;
@@ -354,6 +377,7 @@ nav {
     font-weight: 800;
 }
 
+/* Presenta los enlaces sociales como botones circulares con sombra. */
 .social-icon {
     display: inline-flex;
     align-items: center;
@@ -368,17 +392,20 @@ nav {
     box-shadow: 0 2px 5px rgba(0,0,0,0.08);
 }
 
+/* Crea la franja principal azul de la cabecera institucional. */
 .main-header {
     background: linear-gradient(90deg, #0d3b8c 0%, #1d5fe8 32%, #2d62d4 100%);
     box-shadow: inset 0 -1px 0 rgba(255,255,255,0.18);
 }
 
+/* Ajusta el ancho y los márgenes del contenido de la cabecera. */
 .main-header .container {
     max-width: 1500px;
     margin: 0 auto;
     padding: 0 18px;
 }
 
+/* Alinea el logotipo y la navegación dentro de la cabecera. */
 .header-row {
     display: flex;
     align-items: center;
@@ -387,6 +414,7 @@ nav {
     gap: 24px;
 }
 
+/* Reserva espacio para la marca y evita que se comprima. */
 .brand {
     min-width: 190px;
     display: flex;
@@ -394,6 +422,7 @@ nav {
     flex-shrink: 0;
 }
 
+/* Define la caja que contiene el emblema o logotipo institucional. */
 .brand-mark {
     position: relative;
     display: flex;
@@ -409,6 +438,7 @@ nav {
     flex-shrink: 0;
 }
 
+/* Permite que la imagen del logotipo ocupe la caja de la marca sin deformarse. */
 .brand-link {
     display: block;
     width: 100%;
@@ -422,6 +452,7 @@ nav {
     object-fit: contain;
 }
 
+/* Añade el círculo decorativo situado detrás del lado izquierdo de la marca. */
 .brand-mark::before {
     content: "";
     position: absolute;
@@ -433,6 +464,7 @@ nav {
     border-radius: 50%;
 }
 
+/* Añade el círculo decorativo situado detrás del lado derecho de la marca. */
 .brand-mark::after {
     content: "";
     position: absolute;
@@ -444,6 +476,7 @@ nav {
     border-radius: 50%;
 }
 
+/* Organiza verticalmente el texto del distintivo institucional. */
 .brand-badge {
     position: relative;
     z-index: 1;
@@ -457,6 +490,7 @@ nav {
     text-transform: uppercase;
 }
 
+/* Ajusta el texto secundario del distintivo. */
 .brand-badge small {
     font-size: 0.82rem;
     color: #0d1b7b;
@@ -464,11 +498,13 @@ nav {
     margin-bottom: 4px;
 }
 
+/* Destaca el nombre o sigla principal del distintivo. */
 .brand-badge strong {
     font-size: 1.9rem;
     color: #d62828;
 }
 
+/* Distribuye horizontalmente los enlaces principales del menú. */
 .main-nav {
     display: flex;
     align-items: center;
@@ -481,11 +517,13 @@ nav {
     white-space: nowrap;
 }
 
+/* Permite posicionar los menús desplegables respecto a cada opción. */
 .main-nav > li {
     position: relative;
     list-style: none;
 }
 
+/* Da formato y área interactiva a enlaces y botones de navegación. */
 .nav-link {
     display: inline-flex;
     align-items: center;
@@ -504,6 +542,7 @@ nav {
     text-shadow: 0 1px 0 rgba(0,0,0,0.15);
 }
 
+/* Resalta la opción del menú cuando recibe interacción o está abierta. */
 .nav-link:hover,
 .nav-link:focus,
 .nav-item.open > .nav-link {
@@ -511,16 +550,19 @@ nav {
     text-shadow: 0 1px 4px rgba(0,0,0,0.25);
 }
 
+/* Dibuja la flecha indicadora en las opciones que tienen submenú. */
 .nav-item.has-dropdown > .nav-link::after {
     content: "▾";
     font-size: 0.85rem;
     transform: translateY(-1px);
 }
 
+/* Reserva espacio para la flecha del menú desplegable. */
 .nav-item.has-dropdown > .nav-link {
     padding-right: 16px;
 }
 
+/* Mantiene oculto y posiciona el panel del submenú antes de abrirlo. */
 .nav-item.has-dropdown .dropdown-menu {
     position: absolute;
     left: 0;
@@ -538,6 +580,7 @@ nav {
     overflow: hidden;
 }
 
+/* Muestra el submenú al pasar el cursor, enfocar con teclado o activar la opción. */
 .nav-item.has-dropdown:hover .dropdown-menu,
 .nav-item.has-dropdown:focus-within .dropdown-menu,
 .nav-item.has-dropdown.open .dropdown-menu {
@@ -546,6 +589,7 @@ nav {
     transform: translateY(0);
 }
 
+/* Presenta cada enlace del submenú como una opción de bloque. */
 .dropdown-menu a {
     display: block;
     padding: 16px 18px;
@@ -559,12 +603,14 @@ nav {
     cursor: pointer;
 }
 
+/* Resalta las opciones del submenú al pasar el cursor o enfocarlas. */
 .dropdown-menu a:hover,
 .dropdown-menu a:focus {
     background: rgba(96, 165, 250, 0.18);
     color: #ffffff;
 }
 
+/* Crea una franja decorativa debajo de la opción desplegable. */
 .menu-accent {
     position: absolute;
     left: 0;
@@ -576,12 +622,14 @@ nav {
     transition: opacity 0.2s ease;
 }
 
+/* Hace visible la franja decorativa mientras el submenú está activo. */
 .nav-item.has-dropdown:hover .menu-accent,
 .nav-item.has-dropdown:focus-within .menu-accent,
 .nav-item.has-dropdown.open .menu-accent {
     opacity: 1;
 }
 
+/* Elimina el subrayado y hereda el color para los enlaces generales. */
 a {
     text-decoration: none;
     color: inherit;
