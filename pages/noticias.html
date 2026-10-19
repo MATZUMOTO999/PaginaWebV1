@@ -157,8 +157,13 @@
   </footer>
 
   <script>
+    // Control del menú principal del sitio.
+    // Cada submenú se cierra al abrir otro para evitar estados superpuestos
+    // y mantener el comportamiento del encabezado predecible para usuarios.
     document.addEventListener('DOMContentLoaded', () => {
       const dropdowns = document.querySelectorAll('.site-header .has-dropdown');
+
+      // Cierra los menús desplegables y actualiza su estado ARIA.
       const closeDropdowns = () => {
         dropdowns.forEach((dropdown) => {
           dropdown.classList.remove('open');

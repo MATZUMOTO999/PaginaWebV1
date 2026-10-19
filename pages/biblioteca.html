@@ -113,9 +113,13 @@
     </div>
   </section>
   <script>
+    // Control del menú principal del sitio.
+    // Se cierran los submenús abiertos al pulsar Escape o al hacer clic fuera
+    // para mantener una navegación clara y accesible en todas las páginas.
     document.addEventListener('DOMContentLoaded', () => {
       const dropdowns = document.querySelectorAll('.site-header .has-dropdown');
 
+      // Cierra los menús desplegables y actualiza el estado de accesibilidad.
       const closeDropdowns = (focusButton = false) => {
         dropdowns.forEach((dropdown) => {
           dropdown.classList.remove('open');
