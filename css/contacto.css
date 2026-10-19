@@ -1,45 +1,309 @@
-.contacto {
-  padding: 4rem 2rem;
-  text-align: center;
-}
-.contacto h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-.contacto-info {
-  list-style: none;
-  padding: 0;
-}
-.contacto-info li {
-  margin: 0.5rem 0;
-  color: #555;
+/* Base visual y colores compartidos por la página de contacto. */
+:root {
+  --contact-primary: #103c72;
+  --contact-accent: #1769f5;
+  --contact-muted: #657286;
+  --contact-card: #f0f5fc;
 }
 
-/*parte del formulario*/
-.formulario-contacto {
-  padding: 4rem 2rem;
-  max-width: 600px;
-  margin: auto;
+* {
+  box-sizing: border-box;
 }
-.formulario-contacto form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
 }
-.formulario-contacto input,
-.formulario-contacto textarea {
-  padding: 0.75rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+
+body {
+  color: #172235;
+  font-family: "Nunito", "Segoe UI", Arial, sans-serif;
 }
-.formulario-contacto button {
-  background: #2563eb;
+
+a {
+  text-decoration: none;
+}
+
+/* Banner con fotografía institucional oscurecida para facilitar la lectura. */
+.contact-hero {
+  min-height: 210px;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+  background:
+    linear-gradient(rgba(7, 21, 42, 0.68), rgba(7, 21, 42, 0.72)),
+    url("https://iestphuanta.edu.pe/wp-content/uploads/2025/10/OKOK.jpg") center 48% / cover no-repeat;
   color: #fff;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+  text-align: center;
 }
-.formulario-contacto button:hover {
-  background: #1e40af;
+
+.contact-hero-inner {
+  width: min(100%, 1180px);
+}
+
+.contact-hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.breadcrumb a {
+  color: inherit;
+}
+
+.breadcrumb a:hover {
+  color: #9fc5ff;
+}
+
+/* Introducción y tarjetas con enlaces rápidos a los datos oficiales. */
+.contact-section {
+  position: relative;
+  overflow: hidden;
+  padding: 44px 20px 38px;
+  background:
+    radial-gradient(circle, rgba(31, 92, 174, 0.045) 2px, transparent 2.5px) right 24% bottom -22px / 14px 14px,
+    #fff;
+}
+
+.contact-content {
+  width: min(100%, 470px);
+  margin-inline: auto;
+}
+
+.contact-heading {
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.section-label {
+  display: inline-block;
+  margin-bottom: 5px;
+  color: var(--contact-accent);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.heading-mark {
+  margin-left: 10px;
+  color: var(--contact-accent);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.contact-heading h2 {
+  margin: 0;
+  color: #151923;
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.contact-heading h2 span {
+  color: #163fbd;
+}
+
+.contact-cards {
+  display: grid;
+  gap: 12px;
+}
+
+.contact-card {
+  display: flex;
+  min-height: 78px;
+  align-items: center;
+  gap: 16px;
+  padding: 15px 20px;
+  background: var(--contact-card);
+  color: inherit;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.contact-card:hover {
+  background: #e6effb;
+  transform: translateY(-1px);
+}
+
+.contact-card:focus-visible {
+  outline: 3px solid #78a8ff;
+  outline-offset: 3px;
+}
+
+.card-icon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  place-items: center;
+  color: #5288ff;
+}
+
+.card-icon svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.card-copy {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.card-copy strong {
+  color: #182238;
+  font-size: 0.98rem;
+  font-weight: 800;
+}
+
+.card-copy span {
+  overflow-wrap: anywhere;
+  color: var(--contact-muted);
+  font-size: 0.82rem;
+}
+
+/* Mapa de ubicación a ancho completo para reconocer fácilmente la sede. */
+.map-section {
+  width: 100%;
+  height: clamp(220px, 30vw, 340px);
+  background: #e8f0f7;
+}
+
+.map-section iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Pie institucional en columnas que se apilan en pantallas angostas. */
+.contact-footer {
+  padding: 30px 20px 14px;
+  background: linear-gradient(135deg, #02051f, #07183a);
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.footer-content {
+  display: grid;
+  width: min(100%, 1180px);
+  grid-template-columns: 1.35fr 0.8fr 1fr 1.15fr;
+  gap: 28px;
+  margin-inline: auto;
+  padding: 4px 0 24px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: inherit;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.footer-brand img {
+  width: 94px;
+  height: 52px;
+  flex: 0 0 94px;
+  object-fit: contain;
+}
+
+.footer-column {
+  display: grid;
+  align-content: start;
+  gap: 7px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.83rem;
+  line-height: 1.5;
+}
+
+.footer-column h2 {
+  margin: 0 0 3px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.footer-column a {
+  width: fit-content;
+  color: inherit;
+}
+
+.footer-column a:hover {
+  color: #9fc5ff;
+}
+
+.footer-bottom {
+  width: min(100%, 1180px);
+  margin-inline: auto;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+/* Ajusta el pie y el mapa para tabletas y teléfonos. */
+@media (max-width: 1300px) and (min-width: 981px) {
+  .site-header .header-row {
+    gap: 8px;
+    padding-inline: 24px;
+  }
+
+  .site-header .brand-link {
+    width: 160px;
+    flex-basis: 160px;
+  }
+
+  .site-header .main-nav {
+    gap: 0;
+  }
+
+  .site-header .nav-link {
+    gap: 5px;
+    padding-inline: 6px;
+    font-size: 0.86rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .footer-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .contact-hero {
+    min-height: 190px;
+  }
+
+  .contact-section {
+    padding: 36px 20px;
+  }
+
+  .contact-card {
+    min-height: 72px;
+    padding-inline: 15px;
+  }
+
+  .map-section {
+    height: 250px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }

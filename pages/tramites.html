@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#103c72" />
+  <meta name="description" content="Texto Único de Procedimientos Administrativos del Instituto de Educación Superior Público Huanta." />
+  <title>TUPA | IES Público Huanta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site-header.css">
+  <style>
+    /* Colores reutilizados por las secciones principales de la página. */
+    :root {
+      --primary: #0d3a6c;
+      --primary-strong: #0b2d5f;
+      --primary-soft: #eaf4ff;
+      --accent: #1a73d8;
+      --accent-strong: #0c5ec9;
+      --text: #1f2a37;
+      --muted: #5e6a7a;
+      --line: rgba(14, 48, 90, 0.12);
+      --white: #ffffff;
+      --bg-soft: #edf3fb;
+      --shadow: 0 16px 40px rgba(14, 44, 80, 0.12);
+    }
+
+    /* Normaliza medidas y tipografía para que el diseño sea consistente. */
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Nunito", "Segoe UI", sans-serif;
+      background: var(--bg-soft);
+      color: var(--text);
+    }
+
+    a { text-decoration: none; }
+
+    img { max-width: 100%; display: block; }
+
+    /* Encabezado: franja de contacto, logo y navegación institucional. */
+    .site-header {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Alinea los datos de contacto y sus iconos en una sola franja. */
+    .topbar {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      color: #5f6d82;
+      font-size: 0.94rem;
+    }
+
+    .contact-strip {
+      width: min(1200px, calc(100% - 48px));
+      min-height: 42px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    /* Presenta teléfono, dirección y correo como enlaces accesibles. */
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 18px;
+      border-right: 1px solid #e6e9f0;
+      color: inherit;
+      white-space: nowrap;
+    }
+
+    .contact-item:first-child { border-left: 1px solid #e6e9f0; }
+
+    .contact-icon {
+      color: var(--accent);
+      width: 16px;
+      height: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-icon svg {
+      width: 16px;
+      height: 16px;
+      display: block;
+    }
+
+    /* Mantiene el acceso a Facebook junto a los datos de contacto. */
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      margin-left: 18px;
+      border-radius: 50%;
+      color: var(--primary);
+    }
+
+    .social-link img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    /* Fondo del menú principal con el bloque institucional azul. */
+    .main-header {
+      background: linear-gradient(90deg, var(--primary) 0 28%, #ffffff 28% 100%);
+      border-bottom: 1px solid #e3e8f0;
+    }
+
+    .header-row {
+      width: min(1200px, calc(100% - 30px));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    /* Distribuye los enlaces del menú en una fila adaptable. */
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 2px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-item {
+      position: relative;
+      list-style: none;
+    }
+
+    /* Estilo compartido por enlaces y botones de navegación desplegable. */
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 8px 10px;
+      color: #1e2e40;
+      font-size: 0.96rem;
+      font-weight: 700;
+      background: transparent;
+      border: 0;
+      border-radius: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover,
+    .has-dropdown.open > .nav-link {
+      background: rgba(33, 100, 226, 0.08);
+      color: var(--accent);
+    }
+
+    .nav-chevron {
+      width: 7px;
+      height: 7px;
+      display: inline-block;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg);
+      margin-top: -3px;
+    }
+
+    /* Oculta los submenús hasta que el botón correspondiente los active. */
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      min-width: 200px;
+      display: none;
+      padding: 8px;
+      background: #fff;
+      border: 1px solid rgba(17, 41, 74, 0.08);
+      border-radius: 10px;
+      box-shadow: 0 20px 40px rgba(14, 26, 48, 0.12);
+    }
+
+    .has-dropdown.open .dropdown-menu {
+      display: grid;
+    }
+
+    .dropdown-menu a {
+      padding: 10px 12px;
+      border-radius: 8px;
+      color: #1b2940;
+      font-weight: 600;
+    }
+
+    .dropdown-menu a:hover {
+      background: rgba(30, 115, 216, 0.08);
+      color: var(--primary);
+    }
+
+    /* Banner de página con fotografía y capa oscura para mantener legible el título. */
+    .page-hero {
+      position: relative;
+      min-height: 250px;
+      background: linear-gradient(rgba(9, 28, 50, 0.55), rgba(9, 28, 50, 0.55)),
+        url('https://iestphuanta.edu.pe/wp-content/uploads/2025/10/OKOK.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Centra el título y la ruta de navegación sobre el banner. */
+    .page-hero-inner {
+      width: min(1200px, calc(100% - 40px));
+      text-align: center;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      margin: 0 0 12px;
+      font-weight: 800;
+    }
+
+    /* Ruta que indica al visitante que está en la sección TUPA. */
+    .breadcrumb {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .breadcrumb .sep {
+      opacity: 0.8;
+    }
+
+    /* Sección informativa del TUPA con detalles gráficos en sus esquinas. */
+    .content-wrap {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      width: 100%;
+      min-height: 368px;
+      margin: 0 auto;
+      padding: 16px 20px 48px;
+      background: #fff;
+    }
+
+    /* Decoración SVG de fondo; no interfiere con el contenido ni los clics. */
+    .content-wrap::before,
+    .content-wrap::after {
+      position: absolute;
+      z-index: -1;
+      bottom: 0;
+      width: min(200px, 24vw);
+      height: 105px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 105' fill='none' stroke='%23d9e6f5' stroke-width='3'%3E%3Cpath d='M0 16h42l20 20h44l22 22h72M0 48h65l18 18h82M0 82h94l20-20h45l18-18h26'/%3E%3Ccircle cx='128' cy='58' r='5' fill='%23d9e6f5' stroke='none'/%3E%3C/svg%3E") left bottom / contain no-repeat;
+      content: "";
+      pointer-events: none;
+    }
+
+    .content-wrap::after {
+      right: 0;
+      transform: scaleX(-1);
+    }
+
+    .section-header,
+    .intro,
+    .cta-row {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Encabezado visual de la información del documento administrativo. */
+    .section-header {
+      text-align: center;
+      margin: 0 auto 24px;
+    }
+
+    .section-header .label {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: 800;
+    }
+
+    .section-header h2 {
+      margin: 6px 0 8px;
+      color: #111827;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .section-header .rule {
+      width: 48px;
+      height: 2px;
+      margin: 0 auto;
+      background: var(--accent);
+    }
+
+    /* Texto breve que explica el propósito del enlace al TUPA. */
+    .intro {
+      max-width: 900px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    /* Centra el acceso al archivo oficial del TUPA. */
+    .cta-row {
+      display: flex;
+      justify-content: center;
+      margin-top: 22px;
+    }
+
+    /* Botón que abre el PDF oficial en una pestaña nueva. */
+    .primary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 10px 20px;
+      border: 2px solid #78a8ff;
+      border-radius: 5px;
+      background: linear-gradient(135deg, #1769f5, #0752d5);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 800;
+      box-shadow: 0 8px 16px rgba(21, 96, 196, 0.2);
+    }
+
+    .primary-btn:hover {
+      background: linear-gradient(135deg, #0c5ec9, #0844b1);
+    }
+
+    .primary-btn .arrow {
+      font-size: 1.15rem;
+    }
+
+
+    /* Pie institucional con identidad, redes, información y horario. */
+    .footer-area {
+      background: linear-gradient(180deg, #071d42 0%, #0a1934 100%);
+      color: rgba(255,255,255,0.86);
+      padding: 34px 0 18px;
+    }
+
+    /* Limita el ancho del contenido del pie y lo centra en la página. */
+    .footer-inner {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    /* Ordena los bloques del pie en cuatro columnas en pantallas amplias. */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.7fr 1fr 1.15fr;
+      align-items: start;
+      gap: 28px;
+      padding: 8px 0 24px;
+    }
+
+    .brand-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .footer-logo {
+      width: 120px;
+      height: 58px;
+      object-fit: contain;
+    }
+
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      font-size: 0.96rem;
+      line-height: 1.5;
+    }
+
+    .footer-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .footer-list strong {
+      color: #fff;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .footer-list a {
+      color: inherit;
+    }
+
+    .footer-list a:hover {
+      color: #8fc0ff;
+    }
+
+    .legal {
+      margin-top: 0;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      text-align: center;
+      color: rgba(255,255,255,0.72);
+      font-size: 0.92rem;
+    }
+
+    /* Reorganiza el pie y el banner para móviles sin cambiar el orden del contenido. */
+    @media (max-width: 860px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page-hero {
+        min-height: 220px;
+      }
+
+      .content-wrap {
+        min-height: 0;
+        padding: 28px 20px 52px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado compartido: contacto, marca y navegación a las páginas del sitio. -->
+  <header class="site-header">
+    <div class="topbar">
+      <div class="contact-strip">
+        <a class="contact-item" href="tel:+51066322296">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.08 9.92a16 16 0 0 0 6 6l1.29-1.27a2 2 0 0 1 2.11-.45c.9.34 1.84.57 2.8.69A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span>(066) 322296</span>
+        </a>
+        <a class="contact-item" href="https://maps.app.goo.gl/ZFAEK77MSjC9hejN9" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
+          </span>
+          <span>Jr. Córdova N.º 650, Huanta</span>
+        </a>
+        <a class="contact-item" href="mailto:contactos@iestphuanta.edu.pe">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m22 7-10 7L2 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span>contactos@iestphuanta.edu.pe</span>
+        </a>
+        <a class="social-link" href="https://www.facebook.com/profile.php?id=61557665334329" target="_blank" rel="noopener noreferrer" aria-label="Facebook IES Huanta">
+          <img src="../assets/facebook.png" alt="Facebook IES Huanta" />
+        </a>
+      </div>
+    </div>
+
+    <div class="main-header">
+      <div class="header-row">
+        <a href="../index.html" class="brand-link" aria-label="IES Huanta, página de inicio">
+          <img src="../assets/logo%20ies%20huanta.png" alt="Instituto de Educación Superior Público Huanta" />
+        </a>
+
+        <!-- Menú principal con TUPA como única opción dentro de Trámite. -->
+        <nav aria-label="Menú principal">
+          <ul class="main-nav">
+            <li><a class="nav-link" href="./nosotros.html">Nosotros</a></li>
+            <li><a class="nav-link" href="./carreras.html">Programas de estudios</a></li>
+            <li><a class="nav-link" href="./admision.html">Admisión y Matricula</a></li>
+            <li><a class="nav-link" href="./transparencia.html">Transparencia</a></li>
+            <li class="nav-item has-dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-expanded="false" aria-controls="tramites-menu">
+                Trámite <span class="nav-chevron" aria-hidden="true"></span>
+              </button>
+              <div class="dropdown-menu" id="tramites-menu">
+                <a href="./tramites.html">TUPA</a>
+              </div>
+            </li>
+            <li><a class="nav-link" href="./contacto.html">Contáctanos</a></li>
+            <li class="nav-item has-dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-expanded="false" aria-controls="other-menu">
+                Otras páginas <span class="nav-chevron" aria-hidden="true"></span>
+              </button>
+              <div class="dropdown-menu" id="other-menu">
+                <a href="./links-institucionales.html">Links Institucionales</a>
+                <a href="./noticias.html">Noticias</a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner de sección con título y ruta de regreso a la página de inicio. -->
+  <section class="page-hero" aria-label="Banner de trámites">
+    <div class="page-hero-inner">
+      <h1>Tupa</h1>
+      <div class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="../index.html" style="color: inherit;">Home</a>
+        <span class="sep">›</span>
+        <span>Tupa</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Presentación del TUPA y acceso al documento PDF oficial. -->
+  <main class="content-wrap">
+    <div class="section-header">
+      <span class="label">Tupa</span>
+      <h2>Texto Único de Procedimientos Administrativos</h2>
+      <div class="rule" aria-hidden="true"></div>
+    </div>
+
+    <p class="intro">
+      El Instituto de Educación Superior Público Huanta promueve la transparencia y eficiencia en sus procesos administrativos. Consulta el TUPA para conocer los procedimientos y requisitos de los trámites institucionales.
+    </p>
+
+    <div class="cta-row">
+      <a class="primary-btn" href="https://iestphuanta.edu.pe/wp-content/uploads/2025/04/TUPA.pdf" target="_blank" rel="noopener noreferrer">
+        VER TUPA <span class="arrow" aria-hidden="true">+</span>
+      </a>
+    </div>
+  </main>
+
+  <!-- Información institucional y enlaces de contacto al final de la página. -->
+  <footer class="footer-area">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="brand-box">
+          <img class="footer-logo" src="../assets/logo%20ies%20huanta.png" alt="Instituto de Educación Superior Público Huanta">
+          <div class="brand-copy">
+            <span>Instituto de Educación Superior Público “Huanta”</span>
+          </div>
+        </div>
+
+        <div class="footer-list">
+          <strong>Facebook</strong>
+          <a href="https://www.facebook.com/profile.php?id=61557665334329" target="_blank" rel="noopener noreferrer">Visita nuestra página</a>
+        </div>
+
+        <ul class="footer-list">
+          <li><strong>Información</strong></li>
+          <li>IES Huanta</li>
+          <li>Instituto de Educación Superior Público</li>
+        </ul>
+
+        <ul class="footer-list">
+          <li><strong>Horario de atención:</strong></li>
+          <li>Lun - Vie: 7:30 a.m. - 5:15 p.m.</li>
+          <li>Jr. Córdova N.° 650, Huanta</li>
+        </ul>
+      </div>
+
+      <div class="legal">© 2025 Instituto de Educación Superior Público “Huanta”</div>
+    </div>
+  </footer>
+
+  <script>
+    // Inicializa los controles desplegables del encabezado cuando el HTML está listo.
+    document.addEventListener('DOMContentLoaded', () => {
+      const dropdowns = document.querySelectorAll('.site-header .has-dropdown');
+
+      // Cierra todos los submenús y sincroniza el estado anunciado por accesibilidad.
+      const closeDropdowns = () => {
+        dropdowns.forEach((dropdown) => {
+          dropdown.classList.remove('open');
+          const button = dropdown.querySelector('.dropdown-toggle');
+          if (button) {
+            button.setAttribute('aria-expanded', 'false');
+          }
+        });
+      };
+
+      dropdowns.forEach((dropdown) => {
+        const button = dropdown.querySelector('.dropdown-toggle');
+        if (!button) return;
+
+        // Abre el submenú elegido y cierra cualquier otro que ya estuviera abierto.
+        button.addEventListener('click', () => {
+          const shouldOpen = !dropdown.classList.contains('open');
+          closeDropdowns();
+          if (shouldOpen) {
+            dropdown.classList.add('open');
+            button.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      // Cierra los submenús al hacer clic fuera del menú desplegable.
+      document.addEventListener('click', (event) => {
+        if (event.target instanceof Element && !event.target.closest('.site-header .has-dropdown')) {
+          closeDropdowns();
+        }
+      });
+
+      // Permite cerrar los submenús con Escape desde el teclado.
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          closeDropdowns();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
